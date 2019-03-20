@@ -2210,3 +2210,70 @@ Query is: SELECT JOB_INSTANCE_ID, JOB_NAME from BATCH_JOB_INSTANCE where JOB_NAM
 2019-03-20 20:43:55,730 INFO  [Thread-2] LocalContainerEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
 2019-03-20 20:43:55,734 INFO  [Thread-2] HikariDataSource: HikariPool-1 - Shutdown initiated...
 2019-03-20 20:43:55,741 INFO  [Thread-2] HikariDataSource: HikariPool-1 - Shutdown completed.
+2019-03-20 20:45:02,517 INFO  [main] BatchApplication: Starting BatchApplication on BEAST with PID 4548 (started by MAS in H:\Development\JAVA PROJECTS\spring-batch)
+2019-03-20 20:45:02,519 INFO  [main] BatchApplication: The following profiles are active: uat
+2019-03-20 20:45:02,976 INFO  [main] RepositoryConfigurationDelegate: Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-03-20 20:45:02,998 INFO  [main] RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 15ms. Found 0 repository interfaces.
+2019-03-20 20:45:03,125 INFO  [main] PostProcessorRegistrationDelegate$BeanPostProcessorChecker: Bean 'org.springframework.amqp.rabbit.annotation.RabbitBootstrapConfiguration' of type [org.springframework.amqp.rabbit.annotation.RabbitBootstrapConfiguration$$EnhancerBySpringCGLIB$$1d088553] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-20 20:45:03,330 INFO  [main] HikariDataSource: HikariPool-1 - Starting...
+2019-03-20 20:45:03,372 INFO  [main] HikariDataSource: HikariPool-1 - Start completed.
+2019-03-20 20:45:03,855 INFO  [main] JdbcExecutor: SELECT COUNT(*) FROM batch.DATABASECHANGELOGLOCK
+2019-03-20 20:45:03,864 INFO  [main] JdbcExecutor: SELECT COUNT(*) FROM batch.DATABASECHANGELOGLOCK
+2019-03-20 20:45:03,869 INFO  [main] JdbcExecutor: SELECT `LOCKED` FROM batch.DATABASECHANGELOGLOCK WHERE ID=1
+2019-03-20 20:45:03,890 INFO  [main] StandardLockService: Successfully acquired change log lock
+2019-03-20 20:45:04,836 INFO  [main] JdbcExecutor: SELECT MD5SUM FROM batch.DATABASECHANGELOG WHERE MD5SUM IS NOT NULL LIMIT 1
+2019-03-20 20:45:04,838 INFO  [main] JdbcExecutor: SELECT COUNT(*) FROM batch.DATABASECHANGELOG
+2019-03-20 20:45:04,838 INFO  [main] StandardChangeLogHistoryService: Reading from batch.DATABASECHANGELOG
+2019-03-20 20:45:04,838 INFO  [main] JdbcExecutor: SELECT * FROM batch.DATABASECHANGELOG ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2019-03-20 20:45:04,851 INFO  [main] StandardLockService: Successfully released change log lock
+2019-03-20 20:45:04,964 INFO  [main] LogHelper: HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-03-20 20:45:05,025 INFO  [main] Version: HHH000412: Hibernate Core {5.4.0.Final}
+2019-03-20 20:45:05,026 INFO  [main] Environment: HHH000206: hibernate.properties not found
+2019-03-20 20:45:05,179 INFO  [main] Version: HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2019-03-20 20:45:05,276 INFO  [main] Dialect: HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-03-20 20:45:05,430 INFO  [main] JtaPlatformInitiator: HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2019-03-20 20:45:05,432 INFO  [main] LocalContainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-03-20 20:45:05,669 WARN  [main] JpaBatchConfigurer: JPA does not support custom isolation levels, so locks may not be taken when launching Jobs
+2019-03-20 20:45:05,672 INFO  [main] JobRepositoryFactoryBean: No database type set, using meta data indicating: MYSQL
+2019-03-20 20:45:05,752 INFO  [main] SimpleJobLauncher: No TaskExecutor has been set, defaulting to synchronous executor.
+2019-03-20 20:45:05,835 INFO  [main] BatchApplication: Started BatchApplication in 4.047 seconds (JVM running for 4.972)
+2019-03-20 20:45:05,838 INFO  [main] JobLauncherCommandLineRunner: Running default command line with: []
+2019-03-20 20:45:06,004 INFO  [main] SimpleJobLauncher: Job: [FlowJob: [name=importUserJob]] launched with the following parameters: [{run.id=6}]
+2019-03-20 20:45:06,027 INFO  [main] SimpleStepHandler: Executing step: [step1]
+2019-03-20 20:45:06,069 INFO  [main] PersonItemProcessor: Converting (firstName: Jill, lastName: Doe) into (firstName: JILL, lastName: DOE)
+2019-03-20 20:45:06,069 INFO  [main] PersonItemProcessor: Converting (firstName: Joe, lastName: Doe) into (firstName: JOE, lastName: DOE)
+2019-03-20 20:45:06,070 INFO  [main] PersonItemProcessor: Converting (firstName: Justin, lastName: Doe) into (firstName: JUSTIN, lastName: DOE)
+2019-03-20 20:45:06,070 INFO  [main] PersonItemProcessor: Converting (firstName: Jane, lastName: Doe) into (firstName: JANE, lastName: DOE)
+2019-03-20 20:45:06,070 INFO  [main] PersonItemProcessor: Converting (firstName: John, lastName: Doe) into (firstName: JOHN, lastName: DOE)
+2019-03-20 20:45:06,070 INFO  [main] PersonItemProcessor: Converting (firstName: Sammy, lastName: rtyryrtyrt) into (firstName: SAMMY, lastName: RTYRYRTYRT)
+2019-03-20 20:45:06,089 INFO  [main] JobCompletionNotificationListener: !!! JOB FINISHED! Time to verify the results
+2019-03-20 20:45:06,091 INFO  [main] JobCompletionNotificationListener: Found <firstName: JILL, lastName: DOE> in the database.
+2019-03-20 20:45:06,091 INFO  [main] JobCompletionNotificationListener: Found <firstName: JOE, lastName: DOE> in the database.
+2019-03-20 20:45:06,091 INFO  [main] JobCompletionNotificationListener: Found <firstName: JUSTIN, lastName: DOE> in the database.
+2019-03-20 20:45:06,091 INFO  [main] JobCompletionNotificationListener: Found <firstName: JANE, lastName: DOE> in the database.
+2019-03-20 20:45:06,091 INFO  [main] JobCompletionNotificationListener: Found <firstName: JOHN, lastName: DOE> in the database.
+2019-03-20 20:45:06,091 INFO  [main] JobCompletionNotificationListener: Found <firstName: SAMMY, lastName: RTYRYRTYRT> in the database.
+2019-03-20 20:45:06,092 INFO  [main] JobCompletionNotificationListener: Found <firstName: JILL, lastName: DOE> in the database.
+2019-03-20 20:45:06,092 INFO  [main] JobCompletionNotificationListener: Found <firstName: JOE, lastName: DOE> in the database.
+2019-03-20 20:45:06,092 INFO  [main] JobCompletionNotificationListener: Found <firstName: JUSTIN, lastName: DOE> in the database.
+2019-03-20 20:45:06,092 INFO  [main] JobCompletionNotificationListener: Found <firstName: JANE, lastName: DOE> in the database.
+2019-03-20 20:45:06,092 INFO  [main] JobCompletionNotificationListener: Found <firstName: JOHN, lastName: DOE> in the database.
+2019-03-20 20:45:06,092 INFO  [main] JobCompletionNotificationListener: Found <firstName: SAMMY, lastName: RTYRYRTYRT> in the database.
+2019-03-20 20:45:06,092 INFO  [main] JobCompletionNotificationListener: Found <firstName: JILL, lastName: DOE> in the database.
+2019-03-20 20:45:06,092 INFO  [main] JobCompletionNotificationListener: Found <firstName: JOE, lastName: DOE> in the database.
+2019-03-20 20:45:06,092 INFO  [main] JobCompletionNotificationListener: Found <firstName: JUSTIN, lastName: DOE> in the database.
+2019-03-20 20:45:06,092 INFO  [main] JobCompletionNotificationListener: Found <firstName: JANE, lastName: DOE> in the database.
+2019-03-20 20:45:06,092 INFO  [main] JobCompletionNotificationListener: Found <firstName: JOHN, lastName: DOE> in the database.
+2019-03-20 20:45:06,092 INFO  [main] JobCompletionNotificationListener: Found <firstName: SAMMY, lastName: RTYRYRTYRT> in the database.
+2019-03-20 20:45:06,092 INFO  [main] JobCompletionNotificationListener: Found <firstName: JILL, lastName: DOE> in the database.
+2019-03-20 20:45:06,093 INFO  [main] JobCompletionNotificationListener: Found <firstName: JOE, lastName: DOE> in the database.
+2019-03-20 20:45:06,093 INFO  [main] JobCompletionNotificationListener: Found <firstName: JUSTIN, lastName: DOE> in the database.
+2019-03-20 20:45:06,093 INFO  [main] JobCompletionNotificationListener: Found <firstName: JANE, lastName: DOE> in the database.
+2019-03-20 20:45:06,093 INFO  [main] JobCompletionNotificationListener: Found <firstName: JOHN, lastName: DOE> in the database.
+2019-03-20 20:45:06,093 INFO  [main] JobCompletionNotificationListener: Found <firstName: SAMMY, lastName: RTYRYRTYRT> in the database.
+2019-03-20 20:45:06,097 INFO  [main] SimpleJobLauncher: Job: [FlowJob: [name=importUserJob]] completed with the following parameters: [{run.id=6}] and the following status: [COMPLETED]
+2019-03-20 20:45:06,104 INFO  [Thread-2] LocalContainerEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-03-20 20:45:06,107 INFO  [Thread-2] HikariDataSource: HikariPool-1 - Shutdown initiated...
+2019-03-20 20:45:06,113 INFO  [Thread-2] HikariDataSource: HikariPool-1 - Shutdown completed.
