@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet id="20180716032137" author="masgeek">
+        <createTable tableName="people"
+                     remarks="List of countries in https://datahub.io/core/country-list ISO 3166-1-alpha-2">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+
+            <column name="first_name" type="varchar(10)"/>
+            <column name="last_name" type="varchar(255)"/>
+        </createTable>
+
+        <!--<loadData file="/db/people.csv" tableName="people"/>-->
+    </changeSet>
+</databaseChangeLog>
